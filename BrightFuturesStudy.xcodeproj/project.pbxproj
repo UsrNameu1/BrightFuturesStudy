@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12008616A396D2C27F3CC7B /* Pods_BrightFuturesStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20D43597F59D731C124590C8 /* Pods_BrightFuturesStudy.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F7C1330E1B00980D00BE8E13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1330D1B00980D00BE8E13 /* AppDelegate.swift */; };
 		F7C133101B00980D00BE8E13 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C1330F1B00980D00BE8E13 /* FirstViewController.swift */; };
 		F7C133121B00980D00BE8E13 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C133111B00980D00BE8E13 /* SecondViewController.swift */; };
@@ -27,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20D43597F59D731C124590C8 /* Pods_BrightFuturesStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrightFuturesStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AEC22CEAAD962F6753D7FBE /* Pods-BrightFuturesStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrightFuturesStudy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BrightFuturesStudy/Pods-BrightFuturesStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		DDC9CDF0607D0C71169539F5 /* Pods-BrightFuturesStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrightFuturesStudy.release.xcconfig"; path = "Pods/Target Support Files/Pods-BrightFuturesStudy/Pods-BrightFuturesStudy.release.xcconfig"; sourceTree = "<group>"; };
 		F7C133081B00980D00BE8E13 /* BrightFuturesStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrightFuturesStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C1330C1B00980D00BE8E13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7C1330D1B00980D00BE8E13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12008616A396D2C27F3CC7B /* Pods_BrightFuturesStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +63,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76F16FCAFA77534FD652E882 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20D43597F59D731C124590C8 /* Pods_BrightFuturesStudy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B23CF9EF39F7A8258D91AE06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AEC22CEAAD962F6753D7FBE /* Pods-BrightFuturesStudy.debug.xcconfig */,
+				DDC9CDF0607D0C71169539F5 /* Pods-BrightFuturesStudy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F7C132FF1B00980C00BE8E13 = {
 			isa = PBXGroup;
 			children = (
 				F7C1330A1B00980D00BE8E13 /* BrightFuturesStudy */,
 				F7C133221B00980D00BE8E13 /* BrightFuturesStudyTests */,
 				F7C133091B00980D00BE8E13 /* Products */,
+				B23CF9EF39F7A8258D91AE06 /* Pods */,
+				76F16FCAFA77534FD652E882 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,9 +146,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7C133291B00980D00BE8E13 /* Build configuration list for PBXNativeTarget "BrightFuturesStudy" */;
 			buildPhases = (
+				1CF55B44204782321055CB64 /* Check Pods Manifest.lock */,
 				F7C133041B00980D00BE8E13 /* Sources */,
 				F7C133051B00980D00BE8E13 /* Frameworks */,
 				F7C133061B00980D00BE8E13 /* Resources */,
+				A5AC886924ABEEC243E20438 /* Embed Pods Frameworks */,
+				31C592BC95A0F7352B221179 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CF55B44204782321055CB64 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		31C592BC95A0F7352B221179 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrightFuturesStudy/Pods-BrightFuturesStudy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5AC886924ABEEC243E20438 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BrightFuturesStudy/Pods-BrightFuturesStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7C133041B00980D00BE8E13 /* Sources */ = {
@@ -342,6 +417,7 @@
 		};
 		F7C1332A1B00980D00BE8E13 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AEC22CEAAD962F6753D7FBE /* Pods-BrightFuturesStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BrightFuturesStudy/Info.plist;
@@ -352,6 +428,7 @@
 		};
 		F7C1332B1B00980D00BE8E13 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDC9CDF0607D0C71169539F5 /* Pods-BrightFuturesStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BrightFuturesStudy/Info.plist;
@@ -413,6 +490,7 @@
 				F7C1332B1B00980D00BE8E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7C1332C1B00980D00BE8E13 /* Build configuration list for PBXNativeTarget "BrightFuturesStudyTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +499,7 @@
 				F7C1332E1B00980D00BE8E13 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

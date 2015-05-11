@@ -1,0 +1,10 @@
+PODS:
+  - BrightFutures (1.0.1)
+
+DEPENDENCIES:
+  - BrightFutures
+
+SPEC CHECKSUMS:
+  BrightFutures: 76c1b0f2ff9694959c8359dad80f42c6e60c4a59
+
+COCOAPODS: 0.36.3
