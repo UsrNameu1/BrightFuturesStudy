@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import BrightFutures
+
+typealias DataHandler = ((NSData?, NSError?) -> ())
+
+func dataWithError(handler: DataHandler) {
+    let url = "http://sample.jp/data"
+    let request = NSURLRequest(URL: NSURL(string: url)!)
+    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+    { response, data, error in
+        if error != nil {
+            handler(nil, error)
+        } else {
+            handler(data, nil)
+        }
+    }
+}
 
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
