@@ -11,17 +11,32 @@ import BrightFutures
 
 typealias DataHandler = ((NSData?, NSError?) -> ())
 
-func dataWithError(handler: DataHandler) {
+//func dataWithError(handler: DataHandler) {
+//    let url = "http://sample.jp/data"
+//    let request = NSURLRequest(URL: NSURL(string: url)!)
+//    NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+//    { response, data, error in
+//        if error != nil {
+//            handler(nil, error)
+//        } else {
+//            handler(data, nil)
+//        }
+//    }
+//}
+
+func futureData() -> Future<NSData> {
     let url = "http://sample.jp/data"
     let request = NSURLRequest(URL: NSURL(string: url)!)
+    let promise = Promise<NSData>()
     NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
     { response, data, error in
         if error != nil {
-            handler(nil, error)
+            promise.failure(error)
         } else {
-            handler(data, nil)
+            promise.success(data)
         }
     }
+    return promise.future
 }
 
 class FirstViewController: UIViewController {
